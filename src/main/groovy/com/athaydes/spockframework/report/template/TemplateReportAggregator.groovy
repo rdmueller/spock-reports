@@ -58,7 +58,7 @@ class TemplateReportAggregator {
         try {
             def allData = getAllAggregatedDataAndPersistLocalData( jsonDir, aggregatedData )
             aggregatedData.clear()
-            summaryFile.write summary( templateLocation, allData )
+            summaryFile.write (summary( templateLocation, allData ), 'UTF-8')
         } catch ( e ) {
             log.warn( "${this.class.name} failed to create aggregated report", e )
         }
